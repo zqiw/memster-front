@@ -33,6 +33,7 @@
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
+  import {ElForm} from 'element-ui/types/form';
 
   @Component({})
   export default class Login extends Vue {
@@ -68,11 +69,11 @@
             trigger: 'change'
           }
         ]
-      }
+      };
     }
 
     protected login() {
-      this.$refs.loginForm && (this.$refs.loginForm as Vue).validate((valid: boolean) => {
+      this.$refs.loginForm && (this.$refs.loginForm as ElForm).validate((valid: boolean) => {
         if (valid) {
           alert('submit!');
         } else {
